@@ -19,5 +19,8 @@
   "homepage": "https://github.com/polinagv/frontend-project-46#readme",
   "dependencies": {
     "commander": "^9.4.1"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.21"
   }
 }
