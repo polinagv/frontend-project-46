@@ -3,7 +3,7 @@ import { Command } from 'commander';
 import { readFileSync } from 'fs';
 import { extname, resolve } from 'path';
 import { cwd } from 'process';
-import gendiff from '../src/utils.js';
+import { gendiff } from '../src/utils.js';
 
 const program = new Command();
 
@@ -20,8 +20,8 @@ program
   .argument('<filepath1>')
   .argument('<filepath2>')
   .action((filepath1, filepath2) => {
-    let file1 = readFileSync(getFullPath(filepath1)).toString();
-    let file2 = readFileSync(getFullPath(filepath2)).toString();
+    let file1 = readFileSync(getFullPath(filepath1), 'utf-8');
+    let file2 = readFileSync(getFullPath(filepath2), 'utf-8');
 
     if (extname(filepath1) === '.json') {
       file1 = JSON.parse(file1);

@@ -1,22 +1,11 @@
 import { test, expect } from '@jest/globals';
-import gendiff from '../src/utils.js';
+import { gendiff, readFile } from '../src/utils.js';
+
+const file1 = JSON.parse(readFile('file1.json'));
+const file2 = JSON.parse(readFile('file2.json'));
 
 test('generateDifferences', () => {
-  expect(
-    gendiff(
-      {
-        host: 'hexlet.io',
-        timeout: 50,
-        proxy: '123.234.53.22',
-        follow: false,
-      },
-      {
-        timeout: 20,
-        verbose: true,
-        host: 'hexlet.io',
-      },
-    ),
-  ).toMatch(`{
+  expect(gendiff(file1, file2)).toMatch(`{
   - follow: false
     host: hexlet.io
   - proxy: 123.234.53.22
