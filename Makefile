@@ -13,6 +13,9 @@ fix:
 link:
 	npm link
 
+test:
+	npm test
+
 # brain-games: 
 # 	node bin/brain-games.js
 
