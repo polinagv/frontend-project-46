@@ -1,13 +1,15 @@
-import _ from 'lodash';
-import { join, dirname } from 'path';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
+import _ from "lodash";
+import { join, dirname } from "path";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const getFixturePath = (filename) => join(__dirname, '..', '__fixtures__', filename);
-export const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
+const getFixturePath = (filename) =>
+  join(__dirname, "..", "__fixtures__", filename);
+export const readFile = (filename) =>
+  readFileSync(getFixturePath(filename), "utf-8");
 
 export const gendiff = (file1, file2) => {
   const arrOfKeyFile1 = Object.keys(file1);
@@ -19,7 +21,7 @@ export const gendiff = (file1, file2) => {
 
   const sortedArrOfKeys = _.sortBy(arrOfKeysFile1AndFile2);
 
-  let result = '';
+  let result = "";
 
   sortedArrOfKeys.forEach((key) => {
     if (file1[key] === file2[key]) {
