@@ -45,9 +45,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install -g yarn
-      - run: yarn install
-      - run: yarn build
+      - run: make install
       - uses: paambaati/codeclimate-action@v2.5.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_SECRET }}
