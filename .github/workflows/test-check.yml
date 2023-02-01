@@ -43,6 +43,8 @@ jobs:
     steps:
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
+      - run: make install
+      - run: make test
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_SECRET }}
         with:
