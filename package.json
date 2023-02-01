@@ -4,7 +4,7 @@
   "description": "[![Actions Status](https://github.com/polinagv/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/polinagv/frontend-project-46/actions)",
   "main": "/bin/gendiff.js",
   "scripts": {
-    "test": "npx jest",
+    "test": "npx jest --collectCoverage",
     "test:watch": "npx jest --watch"
   },
   "type": "module",
