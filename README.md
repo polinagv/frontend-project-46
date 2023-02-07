@@ -18,5 +18,7 @@ make install
 
 ### Аскинема с примером работы пакета (реализован поиск различий между двумя плоскими (только пары ключ-значение) json-файлами; реализована возможность использования пакета как библиотеки):
 
-https://asciinema.org/a/jN4bfCJ1UQwv4KbpdJ0MJbAZF
+1) https://asciinema.org/a/jN4bfCJ1UQwv4KbpdJ0MJbAZF
+
+2) 5 шаг: https://asciinema.org/a/cZveuHNmmdSLYFrYKpSPT877N
 
