@@ -1,10 +1,10 @@
 env:
   browser: true
   es2021: true
-extends: 
+extends:
   - airbnb-base
   - prettier
-plugins: 
+plugins:
   - prettier
 overrides: []
 parserOptions:
@@ -18,3 +18,5 @@ rules:
     - ignorePackages
     - js: always
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
+settings:
+  import/core-modules: [js-yaml]

@@ -14,6 +14,8 @@ export const readFile = (filename) =>
 export const gendiff = (file1, file2) => {
   const arrOfKeyFile1 = Object.keys(file1);
   const arrOfKeyFile2 = Object.keys(file2);
+  // console.log(file1, file2);
+  // console.log(arrOfKeyFile1);
 
   const arrOfKeysFile1AndFile2 = _.union(arrOfKeyFile1, arrOfKeyFile2);
   // ['host', 'timeout', 'follow', 'proxy', 'verbose'];

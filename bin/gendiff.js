@@ -1,16 +1,9 @@
 #!/usr/bin/env node
 import { Command } from "commander";
-import { readFileSync } from "fs";
-import { extname, resolve } from "path";
-import { cwd } from "process";
 import { gendiff } from "../src/utils.js";
+import parse from "../src/parsers.js";
 
 const program = new Command();
-
-const getFullPath = (filepath) => resolve(cwd(), filepath);
-// console.log(`Current directory: ${cwd()}`);
-// возвращает абсолютный путь текущей директории (например, bin)
-// /home/yandere_sr/frontend-project-46/bin
 
 program
   .name("gendiff")
@@ -20,17 +13,7 @@ program
   .argument("<filepath1>")
   .argument("<filepath2>")
   .action((filepath1, filepath2) => {
-    let file1 = readFileSync(getFullPath(filepath1), "utf-8");
-    let file2 = readFileSync(getFullPath(filepath2), "utf-8");
-
-    if (extname(filepath1) === ".json") {
-      file1 = JSON.parse(file1);
-    }
-
-    if (extname(filepath2) === ".json") {
-      file2 = JSON.parse(file2);
-    }
-    // console.log(file1, file2);
+    const [file1, file2] = parse(filepath1, filepath2);
 
     console.log(gendiff(file1, file2));
   });
